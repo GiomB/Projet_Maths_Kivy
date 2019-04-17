@@ -1,0 +1,1863 @@
+#:import Factory kivy.factory.Factory
+
+
+<MenuPrincipal>:
+
+    Image :
+        source : 'background.jpg'
+        keep_ratio : False
+        allow_stretch : True
+
+
+
+    BoxLayout:
+        spacing : 5
+        orientation : 'vertical'
+
+        Label:
+            text : 'Monty Kivy'
+            font_size : .09 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            bold : True
+
+        Button:
+            text : 'Paradoxe de Monty Hall'
+            on_press:
+                root.manager.current = '2'
+                root.manager.transition.direction = 'left'
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            opacity : 1
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, .76, 1, .3]
+
+
+
+        Button:
+            text : 'Lancer de 3 Dés'
+            on_press:
+                root.manager.current = '3'
+                root.manager.transition.direction = 'left'
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            opacity : 1
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, .76, 1, .3]
+
+        Button:
+            text : 'Lancer de 4 Dés'
+            on_press:
+                root.manager.current = '4'
+                root.manager.transition.direction = 'left'
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            opacity : 1
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, .76, 1, .3]
+
+
+        Button:
+            text : 'There is no game'
+            on_press:
+                root.manager.current = 'Calcul'
+                root.manager.transition.direction = 'left'
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            opacity : 1
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, .76, 1, .3]
+
+
+        Button:
+            text : 'Quitter'
+            on_press:
+                root.quitter_app()
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            opacity : 1
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, .76, 1, .3]
+
+
+    FloatLayout :
+
+        Button :
+            background_normal : 'Garkan_logo.png'
+            size_hint : .2, .25
+            pos_hint: {"right" : 1, "top" : 1}
+            on_press :
+                root.manager.current = '14'
+                root.manager.transition.direction = 'left'
+
+
+
+
+
+<Credits>:
+
+    Image :
+        source : 'Generique.jpg'
+        size_hint : (.8, .8)
+        pos_hint: {"left" : 1, "top" : 1}
+
+    FloatLayout :
+
+        Button :
+            size_hint : (.15, .15)
+            pos_hint: {"left" : .97, "top" : .98}
+            on_press :
+                root.manager.current = '1'
+                root.manager.transition.direction = 'right'
+            background_color: 0, 0, 0, 0
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+        Image :
+
+            source : 'Arthur1.png'
+            size_hint : (0.3, 0.3)
+            pos_hint : {"left" : 1, "bottom" : 1}
+
+        Image :
+
+            source : 'Quentin1.png'
+            size_hint : (0.3, 0.3)
+            pos_hint : {"right" : 1, "bottom" : 1}
+
+        Image :
+
+            source : 'Guillaume1.png'
+            size_hint : (0.3, 0.3)
+            pos_hint : {"right" : 1, "top" : 1}
+
+        Button :
+            background_color: 0, 0, 0, 0
+            size_hint : (.1, .1)
+            keep_ratio : False
+            pos_hint: {"right" : 1, "top" : 1}
+            on_press :
+                root.manager.current = 'EE'
+                root.manager.transition.direction = 'left'
+
+
+
+
+<AideMH>:
+
+    Image :
+        source : "mdbackground_reverse.jpg"
+        keep_ratio : False
+        allow_stretch : True
+
+    Label :
+        text : "Le jeu oppose un présentateur à un candidat (le joueur).\nCe joueur est placé devant trois portes fermées. \nDerrière l'une d'elles se trouve une voiture et derrière chacune des deux autres se trouve une chèvre. \nIl doit tout d'abord désigner une porte. \nPuis le présentateur doit ouvrir une porte qui n'est ni celle choisie par le candidat, \nni celle cachant la voiture (le présentateur sait quelle est la bonne porte dès le début). \nLe candidat a alors le droit d'ouvrir la porte qu'il a choisie initialement, \nou d'ouvrir la troisième porte."
+        font_size : .035 * root.height
+        color : [1, 1, 1, 1]
+        bold: True
+
+    Button :
+        size_hint : (.15, .15)
+        pos_hint: {"left" : .95, "top" : .95}
+        on_press :
+            root.manager.current = '2'
+            root.manager.transition.direction = 'right'
+        background_color: 0, 0, 0, 0
+        Image:
+            source: "back_white.png"
+            x: self.parent.x
+            y: self.parent.y
+            width: self.parent.width
+            height: self.parent.height
+            keep_ratio: True
+
+
+
+
+<MenuSelectionMH>:
+
+    Image :
+        source : "mdbackground_reverse.jpg"
+        keep_ratio : False
+        allow_stretch : True
+
+    BoxLayout:
+        orientation : 'vertical'
+        spacing : 50
+
+        Label:
+            id:rec
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, .1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text : 'Paradoxe de Monty Hall'
+            size : root.width, root.height
+            bold : True
+            font_size : 45
+            size_hint_y : .8
+
+        Button :
+            text : 'Didacticiel'
+            on_press :
+                root.manager.current = '7'
+                root.manager.transition.direction = 'left'
+            font_size : 50
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            background_color : [0, .76, 1, .3]
+
+        Button :
+            text : 'Simulation'
+            on_press :
+                root.manager.current = '13'
+                root.manager.transition.direction = 'left'
+            background_color : [0, .76, 1, .3]
+            font_size : 50
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+
+
+    FloatLayout :
+
+        Button :
+            background_color: 0, 0, 0, 0
+            size_hint : (.1, .2)
+            keep_ratio : False
+            pos_hint: {"right" : .95, "top" : .98}
+            on_press:
+                root.manager.current = '8'
+                root.manager.transition.direction = 'left'
+            Image:
+                source: "info_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+        Button :
+            background_color: 0, 0, 0, 0
+            on_press :
+                root.manager.current = '1'
+                root.manager.transition.direction = 'right'
+            size_hint : (.15, .15)
+            pos_hint: {"left" : .95, "top" : .95}
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+<portes3>:
+    BoxLayout:
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 0, 0.76, 1, .2
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+
+    BoxLayout:
+        orientation : 'vertical'
+        BoxLayout:
+            size_hint_y: .3
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: 0, 0.76, 1, .2
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                font_size : 30
+                size_hint_x: .5
+                text: root.text
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                padding_x : 150
+
+
+        BoxLayout:
+            Button:
+                opacity: root.o1
+                disabled: root.p1
+                background_disabled_normal: root.i1
+                background_normal: 'door.png'
+                on_press:
+                    root.press1() if root.secondclick == False else root.secondpress1()
+            Button:
+                opacity: root.o2
+                disabled: root.p2
+                background_disabled_normal: root.i2
+                background_normal: 'door.png'
+                on_press:
+                    root.press2() if root.secondclick == False else root.secondpress2()
+            Button:
+                opacity: root.o3
+                disabled: root.p3
+                background_disabled_normal: root.i3
+                background_normal: 'door.png'
+                on_press:
+                    root.press3() if root.secondclick == False else root.secondpress3()
+
+    FloatLayout:
+        Button :
+            size_hint_x: .3
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            on_release :
+                root.pressback()
+                root.manager.current = '2'
+                root.manager.transition.direction = 'right'
+            size_hint : (.15, .15)
+            pos_hint: {"left" : .95, "top" : .95}
+            background_color: 0, 0, 0, 0
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+        Button :
+            size_hint_x: .3
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            on_press :
+                root.pressback()
+            size_hint : (.075, .15)
+            pos_hint: {"right" : .95, "top" : .95}
+            background_color: 0, 0, 0, 0
+            Image:
+                source: "reload_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+
+
+<SimulMH>:
+
+    Image :
+        source : "mdbackground_reverse.jpg"
+        keep_ratio : False
+        allow_stretch : True
+
+    BoxLayout:
+        orientation : 'vertical'
+
+        Label:
+            size_hint_y: .3
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, .1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text: 'Simulation du paradoxe de Monty Hall'
+            font_size : 40
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            bold : True
+
+
+
+
+        GridLayout:
+            padding: [0, 0, 0, 100]
+            cols: 3
+            Label:
+                text: 'Quelle est la probabilité de gagner une voiture en changeant de porte?'
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                font_size : 25
+                bold : True
+            TextInput:
+                id: userporte
+                disabled: root.disporte
+                hint_text : 'Touche pour entrer ta probabilité calculée (Tu peux rentrer un calcul avec des * / + - et des . (pas de ,))'
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                font_size : 25
+                bold : True
+
+            Label:
+                text: root.porteanswer
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                font_size : 25
+                bold : True
+
+            Label:
+                text: 'Combien de lancers veux-tu effectuer afin de vérifier statistiquement ta réponse?'
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                font_size : 25
+                bold : True
+            Slider:
+                id: s1
+                min: 10
+                max: 10000
+                step : 10
+                disabled : root.disporte
+            Label:
+                text: 'On a effectué ' + str(s1.value) + ' parties en changeant de portes à chaque fois ' + root.textporte + ' voitures ont été gagnées en tout!' if root.probatext == True else 'On va effectuer ' + str(s1.value) + ' parties pour vérifier statistiquement votre résultat'
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                font_size : 25
+                bold : True
+
+
+    FloatLayout :
+        Button :
+            on_press :
+                root.press()
+
+            pos_hint : {'center_x' : .5}
+            size_hint : .1, .2
+            disabled: root.disporte
+            background_color: 0, 0, 0, 0
+            Image:
+                source: "verified_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+        Button :
+            on_press :
+                root.pressback()
+            size_hint : (.075, .15)
+            pos_hint: {"right" : .95, "top" : .95}
+            background_color: 0, 0, 0, 0
+            Image:
+                source: "reload_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+        Button :
+            on_press :
+                root.manager.current = '2'
+                root.pressback()
+                root.manager.transition.direction = 'right'
+            size_hint : (.15, .15)
+            pos_hint: {"left" : .95, "top" : .95}
+            background_color: 0, 0, 0, 0
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+        Button :
+            on_press :
+                Factory.Calculatrice().open()
+            size_hint : .2, .2
+            pos_hint : {"left" : 1, "bottom" : .95}
+            background_color: 0, 0, 0, 0
+            Image:
+                source: "calculator_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+
+
+<MenuSelection3des>:
+
+    Image :
+        source : 'mdbackground_reverse.jpg'
+        keep_ratio : False
+        allow_stretch : True
+
+    BoxLayout:
+        orientation : 'vertical'
+        spacing : 50
+
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, .1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text : 'Lancer de 3 Dés'
+            font_size : 45
+            bold : True
+            size_hint_y : .8
+
+
+
+        Button :
+            text : 'Didacticiel'
+            on_press :
+                root.manager.current = '5'
+                root.manager.transition.direction = 'left'
+            font_size : 50
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            background_color : [0, .76, 1, .3]
+
+        Button :
+            text : 'Simulation'
+            on_press :
+                root.manager.current = '12'
+                root.manager.transition.direction = 'left'
+            font_size : 50
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            background_color : [0, .76, 1, .3]
+
+
+
+
+
+    FloatLayout :
+
+        Button :
+            size_hint : (.1, .2)
+            pos_hint: {"right" : .95, "top" : .98}
+            on_press:
+                root.manager.current = '9'
+                root.manager.transition.direction = 'left'
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "info_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+        Button :
+            on_press :
+                root.manager.current = '1'
+                root.manager.transition.direction = 'right'
+            size_hint : (.15, .15)
+            pos_hint: {"left" : .95, "top" : .95}
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+<Aide3Des>:
+
+    Image :
+        source : 'mdbackground_reverse.jpg'
+        keep_ratio : False
+        allow_stretch : True
+
+    Label :
+        text : "paire : deux dés identiques  \nbrelan : trois dés identiques \nsuites : les valeurs des trois dés sont consécutives"
+        font_size : .035 * root.height
+        color : [1, 1, 1, 1]
+        bold: True
+
+
+    Button :
+        size_hint : (.15, .15)
+        pos_hint: {"left" : .95, "top" : .95}
+        on_press :
+            root.manager.current = '3'
+            root.manager.transition.direction = 'right'
+        background_color : [0, 0, 0, 0]
+        Image:
+            source: "back_white.png"
+            x: self.parent.x
+            y: self.parent.y
+            width: self.parent.width
+            height: self.parent.height
+            keep_ratio: True
+
+
+
+
+
+
+<Lancer3DesTuto>:
+
+    Image :
+        source : 'mdbackground_reverse.jpg'
+        keep_ratio : False
+        allow_stretch : True
+
+    FloatLayout :
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, .1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text : 'Didacticiel de lancer de 3 Dés'
+            font_size : 40
+            bold : True
+            size_hint : (1, .2)
+            pos_hint : {"top" : 1 , "center_y" : .9}
+
+        Button :
+            on_press :
+                root.manager.current = '3'
+                root.manager.transition.direction = 'right'
+                root.retour()
+            size_hint : (.15, .15)
+            pos_hint : {"left" : .95 , "top" : .98}
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+        Button :
+            on_press :
+                root.retour()
+            size_hint : (.075, .15)
+            pos_hint : {"right" : .95 , "top" : .98}
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "reload_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+        Button:
+            pos_hint: {"x" : .4, "y" : .65}
+            size_hint: .2, .15
+            text:'Lancer les dés!'
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            on_press:
+                root.pressLancer()
+            background_color : [0, .76, 1, .3]
+
+        Image:
+            pos_hint: {"x" : .05, "y" : .4}
+            size_hint: .2, .2
+            source: root.image1
+        Image:
+            pos_hint: {"x" : .4, "y" : .4}
+            size_hint: .2, .2
+            source: root.image2
+        Image:
+            pos_hint: {"x" : .75, "y" : .4}
+            size_hint: .2, .2
+            source: root.image3
+
+        Label :
+            text : 'Nombre de paires effectuées :'+ root.texte_paire_tuto
+            size_hint : (.2, .2)
+            pos_hint : {"left" : 1, "bottom" : 1}
+            font_size : .04 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+        Label :
+            text : 'Nombre de brelans effectués :'+ root.texte_brelan_tuto
+            size_hint : (.2, .2)
+            pos_hint : {"x" : 0.4, "bottom" : 1}
+            font_size : .04 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+        Label :
+            text : 'Nombre de suites effectuées :'+ root.texte_suite_tuto
+            size_hint : (.2, .2)
+            pos_hint : {"right" : 1, "bottom" : 1}
+            font_size : .04 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+        Label :
+            text : 'Nombre de lancés effectués :'+ root.str_nombre_lancers
+            size_hint : (.2, .2)
+            pos_hint : {"x" : 0.4, "y" : 0.2}
+            font_size : .04 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+
+
+<MenuSelection4des>:
+
+    Image :
+        source : 'mdbackground_reverse.jpg'
+        keep_ratio : False
+        allow_stretch : True
+
+    BoxLayout:
+        orientation : 'vertical'
+        spacing : 50
+
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, .1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text : 'Lancer de 4 Dés'
+            size : root.width, root.height
+            bold : True
+            font_size : 45
+            size_hint_y : .8
+
+
+        Button :
+            text : 'Didacticiel'
+            on_press :
+                root.manager.current = '6'
+                root.manager.transition.direction = 'left'
+            font_size : 50
+            background_color : [0, .76, 1, .3]
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+
+        Button :
+            text : 'Simulation'
+            on_press :
+                root.manager.current = '11'
+                root.manager.transition.direction = 'left'
+            font_size : 50
+            background_color : [0, .76, 1, .3]
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+
+
+
+    FloatLayout :
+
+        Button :
+            size_hint : (.1, .2)
+            pos_hint: {"right" : .95, "top" : .98}
+            on_press:
+                root.manager.current = '10'
+                root.manager.transition.direction = 'left'
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "info_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+        Button :
+            on_press :
+                root.manager.current = '1'
+                root.manager.transition.direction = 'right'
+            size_hint : (.15, .15)
+            pos_hint: {"left" : .95, "top" : .96}
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+
+<Aide4Des>:
+
+    Image :
+        source : 'mdbackground_reverse.jpg'
+        keep_ratio : False
+        allow_stretch : True
+
+    Label :
+        text : "paire : deux dés identiques  \nbrelan : trois dés identiques \nsuites : les valeurs des trois dés sont consécutives \n deux paires : ...bah deux paires quoi \ncarré : quatre dés identiques"
+        font_size : .035 * root.height
+        color : [1, 1, 1, 1]
+        bold: True
+
+
+
+    Button :
+        size_hint : (.15, .15)
+        pos_hint: {"left" : .95, "top" : .95}
+        on_press :
+            root.manager.current = '4'
+            root.manager.transition.direction = 'right'
+        background_color : [0, 0, 0, 0]
+        Image:
+            source: "back_white.png"
+            x: self.parent.x
+            y: self.parent.y
+            width: self.parent.width
+            height: self.parent.height
+            keep_ratio: True
+
+
+
+
+
+<Lancer4DesTuto>:
+
+    Image :
+        source : 'mdbackground_reverse.jpg'
+        keep_ratio : False
+        allow_stretch : True
+
+    FloatLayout :
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, .1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text : 'Didacticiel de lancer de 4 Dés'
+            font_size : 40
+            bold : True
+            size_hint : (1, .2)
+            pos_hint : {"top" : 1 , "center_y" : .9}
+
+        Button :
+            on_press :
+                root.manager.current = '4'
+                root.manager.transition.direction = 'right'
+                root.retour()
+            size_hint : (.15, .15)
+            pos_hint : {"left" :  .95, "top" : .98}
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+        Button :
+            on_press :
+                root.retour()
+            size_hint : (.075, .15)
+            pos_hint : {"right" : .95 , "top" : .98}
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "reload_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+        Button:
+            pos_hint: {"x" : .4, "y" : .65}
+            size_hint: .2, .15
+            text:'Lancer les dés!'
+            on_press:
+                root.pressLancer()
+            opacity : .6
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, .76, 1, .3]
+
+        Image:
+            pos_hint: {"x" : .1, "y" : .55}
+            size_hint: .2, .2
+            source: root.image1
+
+        Image:
+            pos_hint: {"x" : .1, "y" : .3}
+            size_hint: .2, .2
+            source: root.image2
+
+        Image:
+            pos_hint: {"x" : .7, "y" : .55}
+            size_hint: .2, .2
+            source: root.image3
+
+        Image:
+            pos_hint: {"x" : .7, "y" : .3}
+            size_hint: .2, .2
+            source: root.image4
+
+
+        Label :
+            text : 'Nombre de paires effectuées :'+ root.texte_paire_tuto
+            size_hint : (.2, .2)
+            pos_hint : {"left" : 1, "bottom" : 1}
+            font_size : .04 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+        Label :
+            text : 'Nombre de brelans effectués :'+ root.texte_brelan_tuto
+            size_hint : (.2, .2)
+            pos_hint : {"x" : 0.2, "bottom" : 1}
+            font_size : .04 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+        Label :
+            text : 'Nombre de suites effectuées :'+ root.texte_suite_tuto
+            size_hint : (.2, .2)
+            pos_hint : {"x" : 0.4, "bottom" : 1}
+            font_size : .04 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+        Label :
+            text : 'Nombre de carrés effectués :'+ root.texte_carre_tuto
+            size_hint : (.2, .2)
+            pos_hint : {"x" : 0.6, "bottom" : 1}
+            font_size : .04 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+        Label :
+            text : 'Nombre de doubles paires effectuées :'+ root.texte_paire2_tuto
+            size_hint : (.2, .2)
+            pos_hint : {"right" : 1, "bottom" : 1}
+            font_size : .04 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+        Label :
+            text : 'Nombre de lancés effectués :'+ root.str_nombre_lancers
+            size_hint : (.2, .2)
+            pos_hint : {"x" : 0.4, "y" : 0.2}
+            font_size : .04 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+<Simul4D>:
+
+    Image :
+        source : 'mdbackground_reverse.jpg'
+        keep_ratio : False
+        allow_stretch : True
+
+
+    BoxLayout:
+        orientation : 'vertical'
+        Label:
+            font_size: 30
+            size_hint_y: .3
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, .1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text: 'Simulation de lancers de 4 dés \n (Tout remplir)'
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            bold : True
+        GridLayout:
+            cols: 3
+            padding: [0, 0, 0, 100]
+
+            Label:
+                text: "Entre la probabilité d'obtenir une paire en lançant 4 dés:"
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            TextInput:
+                id: userpaire
+                disabled: root.disable
+                text: root.paireanswer
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                hint_text : "Touche pour entrer ta probabilité (Tu peux rentrer un calcul avec des * / + - et des . (pas de ,))"
+                font_size : 25
+
+
+            Label:
+                text: 'On a effectué 10 000 lancers et on a obtenu '+ root.textpaire + ' paires' if root.disable == True else ''
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            Label:
+                text: "Entre la probabilité d'obtenir un brelan en lançant 4 dés:"
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            TextInput:
+                id: userbrelan
+                text: root.brelananswer
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                disabled: root.disable
+                background_disabled_normal:
+                hint_text : "Touche pour entrer ta probabilité (Tu peux rentrer un calcul avec des * / + - et des . (pas de ,))"
+                font_size : 25
+
+            Label:
+                text: 'On a effectué 10 000 lancers et on a obtenu '+ root.textbrelan + ' brelans' if root.disable == True else ''
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            Label:
+                text: "Entre la probabilité d'obtenir une suite en lançant 4 dés:"
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            TextInput:
+                id: usersuite
+                text: root.suiteanswer
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                disabled: root.disable
+                background_disabled_normal:
+                hint_text : "Touche pour entrer ta probabilité (Tu peux rentrer un calcul avec des * / + - et des . (pas de ,))"
+                font_size : 25
+
+            Label:
+                text: 'On a effectué 10 000 lancers et on a obtenu '+ root.textsuite+ ' suites' if root.disable == True else ''
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            Label:
+                text: "Entre la probabilité d'obtenir un carré en lançant 4 dés:"
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            TextInput:
+                id: usercarre
+                text: root.carreanswer
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                disabled: root.disable
+                background_disabled_normal:
+                hint_text : "Touche pour entrer ta probabilité (Tu peux rentrer un calcul avec des * / + - et des . (pas de ,))"
+                font_size : 25
+
+            Label:
+                text: 'On a effectué 10 000 lancers et on a obtenu '+ root.textcarre + ' carrés' if root.disable == True else ''
+                font_size : 15
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+                font_size : 25
+
+            Label:
+                text: "Entre la probabilité d'obtenir deux paires en lançant 4 dés:"
+                font_size : 15
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+                font_size : 25
+
+            TextInput:
+                id: userpaire2
+                text: root.paire2answer
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                disabled: root.disable
+                background_disabled_normal:
+                hint_text : "Touche pour entrer ta probabilité (Tu peux rentrer un calcul avec des * / + - et des . (pas de ,))"
+                font_size : 25
+
+            Label:
+                text: 'On a effectué 10 000 lancers et on a obtenu '+ root.textpaire2 + ' doubles paires' if root.disable == True else ''
+                font_size : 15
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+                font_size : 25
+
+    FloatLayout:
+        Button :
+            on_press :
+                root.manager.current = '4'
+                root.pressback()
+                root.manager.transition.direction = 'right'
+            size_hint : (.15, .15)
+            pos_hint: {"left" : .95, "top" : .98}
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+        Button:
+            on_press: root.press()
+            disabled: root.disable
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            pos_hint : {'center_x' : .5}
+            pos_hint_y: {'bottom':1.05}
+            size_hint : 0.05, .1
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "verified_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+        Button :
+            on_press :
+                root.pressback()
+            size_hint : (.1, .12)
+            pos_hint: {"right" : .95, "top" : .95}
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "reload_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+        Button :
+            on_press :
+                Factory.Calculatrice().open()
+            size_hint : .15, .15
+            pos_hint : {"left" : 1, "bottom" : .95}
+            background_color: 0, 0, 0, 0
+            Image:
+                source: "calculator_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+
+<Simul3D>:
+
+    Image :
+        source : 'mdbackground_reverse.jpg'
+        keep_ratio : False
+        allow_stretch : True
+    BoxLayout:
+
+        orientation: 'vertical'
+        Label:
+            size_hint_y: .3
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, .1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text: 'Simulation de lancers de 3 dés \n (Tout remplir)'
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            bold : True
+            font_size : 35
+        GridLayout:
+            cols: 3
+            padding: [0, 0, 0, 100]
+
+            Label:
+                text: "Entre la probabilité d'obtenir une paire en lançant 3 dés:"
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            TextInput:
+                id: userpaire
+                disabled: root.disable
+                text: root.paireanswer
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                hint_text : "Touche pour entrer ta probabilité (Tu peux rentrer un calcul avec des * / + - et des . (pas de ,))"
+                font_size : 25
+
+            Label:
+                text: 'On a effectué 10 000 lancers et on a obtenu '+ root.textpaire + ' paires' if root.disable == True else ''
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            Label:
+                text: "Entre la probabilité d'obtenir un brelan en lançant 3 dés:"
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            TextInput:
+                id: userbrelan
+                text: root.brelananswer
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                disabled: root.disable
+                background_disabled_normal:
+                hint_text : "Touche pour entrer ta probabilité (Tu peux rentrer un calcul avec des * / + - et des . (pas de ,))"
+                font_size : 25
+
+            Label:
+                text: 'On a effectué 10 000 lancers et on a obtenu '+ root.textbrelan + ' brelans' if root.disable == True else ''
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            Label:
+                text: "Entre la probabilité d'obtenir une suite en lançant 3 dés:"
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+
+            TextInput:
+                id: usersuite
+                text: root.suiteanswer
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                disabled: root.disable
+                background_disabled_normal:
+                hint_text : "Touche pour entrer ta probabilité (Tu peux rentrer un calcul avec des * / + - et des . (pas de ,))"
+                font_size : 25
+
+            Label:
+                text: 'On a effectué 10 000 lancers et on a obtenu '+ root.textsuite + ' suites' if root.disable == True else ''
+                font_size : 25
+                text_size : self.size
+                halign : 'center'
+                valign : 'middle'
+                bold: True
+    FloatLayout:
+
+        Button :
+            size_hint : (.15, .15)
+            pos_hint: {"left" : .95, "top" : .95}
+            on_press :
+                root.manager.current = '3'
+                root.pressback()
+                root.manager.transition.direction = 'right'
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+        Button:
+            on_press: root.press()
+            disabled: root.disable
+            pos_hint : {'center_x' : .5}
+            pos_hint_y: {'bottom':1.05}
+            size_hint : 0.05, .1
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "verified_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+        Button :
+            on_press :
+                root.pressback()
+            size_hint : (.075, .15)
+            pos_hint: {"right" : .95, "top" : .95}
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "reload_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+        Button :
+            on_press :
+                Factory.Calculatrice().open()
+            size_hint : .17, .17
+            pos_hint : {"left" : 1, "bottom" : .95}
+            background_color: 0, 0, 0, 0
+            Image:
+                source: "calculator_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+
+
+
+
+
+
+
+<PongBall>:
+    size: 50, 50
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+<PongPaddle>:
+    size: 25, 200
+    canvas:
+        Rectangle:
+            pos:self.pos
+            size:self.size
+
+<PongGame>:
+    ball: pong_ball
+    player1: player_left
+    player2: player_right
+
+    canvas:
+        Rectangle:
+            pos: self.center_x-5, 0
+            size: 10, self.height
+
+    Label:
+        font_size: 70
+        center_x: root.width / 4
+        top: root.top - 50
+        text: str(root.player1.score)
+
+    Label:
+        font_size: 70
+        center_x: root.width * 3 / 4
+        top: root.top - 50
+        text: str(root.player2.score)
+
+    PongBall:
+        id: pong_ball
+        center: self.parent.center
+
+    PongPaddle:
+        id: player_left
+        x: root.x
+        center_y: root.center_y
+
+    PongPaddle:
+        id: player_right
+        x: root.width-self.width
+        center_y: root.center_y
+
+
+<Pong>:
+    PongGame:
+        id: Screen2
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'top'
+        Button:
+            size_hint: 0.1, 0.1
+            text: 'Lance la baballe !'
+            on_press:
+                Screen2.serve_ball()
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'bottom'
+        Button:
+            size_hint: 0.1, 0.1
+            text: 'Si le prof arrive, appuie ici'
+            on_press:
+                root.manager.current = 'EE'
+                root.manager.transition.direction = 'right'
+
+#PUISSANCE4
+
+<ConnectFour>:
+    player_1_name:player_1_name
+    player_2_name:player_2_name
+    games_won_label:games_won
+    start_game_btn:start_game_btn
+    game_board:game_board
+
+    GridLayout:
+        pos:5,root.height-self.height-10
+        pos_hint:{}
+        cols:2
+        padding:0,5,0,5
+        spacing:3
+        height:60
+        cols_minimum:{0:110,1:110}
+        row_default_height:30
+        row_force_default:True
+        Label:
+            color:0,0,0,1
+            text: "Player 1 Name"
+            font_size:"12sp"
+        TextInput:
+            multiline: False
+            write_tab: False
+            font_size:"14sp"
+            id: player_1_name
+        Label:
+            text: "Player 2 Name"
+            color:0,0,0,1
+            font_size:"12sp"
+        TextInput:
+            multiline: False
+            write_tab: False
+            font_size:"14sp"
+            id: player_2_name
+        Button:
+            text: "Start Game"
+            on_press:app.start_game()
+            id: start_game_btn
+        Button:
+            text: "Reset Game"
+            on_press:app.restart_game()
+        Label:
+            text: "Games won:"
+            color:0,0,0,1
+        Label:
+            text: "0 v 0"
+            color:0,0,0,1
+            id:games_won
+
+    Widget:
+        size:root.width-235,root.height
+        pos:235,0
+        canvas:
+            Color:
+                rgb:25/255,71/255,117/255
+        Rectangle:
+            size:self.size
+            pos:self.pos
+
+    GameBoard:
+        id:game_board
+
+
+
+
+
+<Calculatrice@Popup>:
+    title : "Petite aide mais n'en parle pas à M. Barcelo"
+    auto_dismiss: True
+    size_hint: 0.8, 0.8
+    size:root.size
+    CalcGridLayout:
+
+
+
+
+
+
+
+
+
+
+
+
+# Custom button
+<CustButton@Button>:
+    font_size: 32
+
+# Define id so I can refer to the CalcGridLayout
+# class functions
+# Display points to the entry widget
+<CalcGridLayout>:
+    id: calculator
+    display: entry
+    rows: 5
+    padding: 10
+    spacing: 10
+
+    # Where input is displayed
+    BoxLayout:
+        TextInput:
+            id: entry
+            font_size: 32
+            multiline: False
+
+    # When buttons are pressed update the entry
+    BoxLayout:
+        spacing: 10
+        CustButton:
+            text: "7"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "8"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "9"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "+"
+            on_press: entry.text += self.text
+
+    BoxLayout:
+        spacing: 10
+        CustButton:
+            text: "4"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "5"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "6"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "-"
+            on_press: entry.text += self.text
+
+    BoxLayout:
+        spacing: 10
+        CustButton:
+            text: "1"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "2"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "3"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "*"
+            on_press: entry.text += self.text
+
+    # When equals is pressed pass text in the entry
+    # to the calculate function
+    BoxLayout:
+        spacing: 10
+        CustButton:
+            text: "AC"
+            on_press: entry.text = ""
+        CustButton:
+            text: "0"
+            on_press: entry.text += self.text
+        CustButton:
+            text: "="
+            on_press: calculator.calculate(entry.text)
+        CustButton:
+            text: "/"
+            on_press: entry.text += self.text
+
+
+
+
+
+
+<Avion>:
+    Image :
+        source : 'mdbackground_reverse.jpg'
+        keep_ratio : False
+        allow_stretch : True
+
+    BoxLayout:
+        orientation : 'vertical'
+        spacing : 50
+
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, .1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text : "L'énigme de l'avion"
+            font_size : 30
+            bold : True
+
+        Label:
+            text : 'Dans un avion, chaque passager a sa place numérotée. Mais le premier des passagers de cet avion rempli décide de s’asseoir au hasard dans l’appareil plutôt que de s’asseoir forcément à sa place. Les passagers suivants entrent un à un. Ils prennent leur place si elle est libre, sinon s’assoient au hasard. Quelle est la probabilité pour que la dernière personne à entrer s’assoit à sa place ? '
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+        TextInput:
+            id: avion
+            hint_text : 'Touchez pour entrer votre réponse'
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+
+
+        Button:
+            text: 'Valider !'
+            on_press:
+                root.press()
+            opacity : .75
+            font_size : .08 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, .76, 1, .3]
+
+        Button:
+            text: 'Retour'
+            on_press:
+                root.manager.current = '1'
+                root.manager.transition.direction = 'right'
+            opacity : .75
+            font_size : .08 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, .76, 1, .3]
+
+
+
+<EasterEgg>:
+
+    Image :
+        source : 'EasterEgg.png'
+        keep_ratio : False
+        allow_stretch : True
+
+
+
+    BoxLayout:
+        spacing : 5
+        orientation : 'vertical'
+
+        Label:
+            text : 'Games in Kivy'
+            font_size : .09 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            bold : True
+
+        Button: # Pong
+            on_press:
+                root.manager.current = 'Pong'
+                root.manager.transition.direction = 'left'
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            opacity : 1
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "pong.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+        Button: # Lapins
+            on_press:
+                root.manager.current = 'Menu_Lapins'
+                root.manager.transition.direction = 'left'
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            opacity : 1
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "bunny.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+        Button: # Puissance 4
+#            on_press:
+#                root.manager.current = 'Puissance4'
+#                root.manager.transition.direction = 'left'
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            opacity : 1
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "connect4.jpg"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+        Button: # 2048
+#            on_press:
+#                root.manager.current = '2048'
+#                root.manager.transition.direction = 'left'
+            pos_hint : {'center_x' : .5}
+            size_hint_x : 0.5
+            opacity : 1
+            font_size : .05 * root.height
+            text_size : self.size
+            halign : 'center'
+            valign : 'middle'
+            background_color : [0, 0, 0, 0]
+            Image:
+                source: "2048.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
+
+    FloatLayout :
+
+        Button :
+            background_color: 0, 0, 0, 0
+            size_hint : (.1, .1)
+            keep_ratio : False
+            pos_hint: {"left" : 1, "top" : 1}
+            on_press :
+                root.manager.current = '1'
+                root.manager.transition.direction = 'right'
+            Image:
+                source: "back_white.png"
+                x: self.parent.x
+                y: self.parent.y
+                width: self.parent.width
+                height: self.parent.height
+                keep_ratio: True
